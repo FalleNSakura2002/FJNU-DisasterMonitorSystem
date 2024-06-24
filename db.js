@@ -1,6 +1,5 @@
-const monitor = require("nodemon/lib/monitor");
 const { Sequelize, DataTypes } = require("sequelize");
-// 云端调试时需要用的配置
+// 本地调试时需要用的配置
 // MYSQL_USERNAME = "root";
 // MYSQL_PASSWORD = "FALLcanyue2001";
 // MYSQL_ADDRESS = "localhost:3306";
@@ -20,9 +19,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 
 // 从环境变量中读取数据库配置
 const { MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_ADDRESS = "" } = process.env;
-
 const [host, port] = MYSQL_ADDRESS.split(":");
-
 const sequelize = new Sequelize(
   "DisasterInfo",
   MYSQL_USERNAME,
