@@ -21,6 +21,7 @@ router.post("/createInfo", async (req, res) => {
   const occurrenceTime = req.body.occurrenceTime;
   const validation = req.body.validation;
   const detail = req.body.detail;
+  const mediaUrl = req.body.mediaUrl;
 
   await DisasterInfo.create({
     province: province,
@@ -30,6 +31,7 @@ router.post("/createInfo", async (req, res) => {
     occurrenceTime: occurrenceTime,
     validation: validation,
     detail: detail,
+    mediaUrl: mediaUrl,
   });
 
   res.send({
