@@ -12,6 +12,20 @@ router.get("/allInfoDetail", async (req, res) => {
   res.send(Allinfo);
 });
 
+// 按照ID获取事件
+router.get("/infoIdFilter", async (req, res) => {
+  const id = req.query.id;
+
+  var idInfo = "";
+  idInfo = await DisasterInfo.findAll({
+    attributes: {},
+    where: {
+      id: id,
+    },
+  });
+  res.send(idInfo);
+});
+
 // 上传事件
 router.post("/createInfo", async (req, res) => {
   const province = req.body.province;
