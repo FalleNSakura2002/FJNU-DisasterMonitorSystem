@@ -17,7 +17,7 @@ router.get("/infoIdFilter", async (req, res) => {
   const id = req.query.id;
 
   var idInfo = "";
-  idInfo = await DisasterInfo.findAll({
+  idInfo = await DisasterInfo.findOne({
     attributes: {},
     where: {
       id: id,
