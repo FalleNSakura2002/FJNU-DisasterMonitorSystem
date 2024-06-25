@@ -67,7 +67,7 @@ const DisasterInfo = sequelize.define("DisasterInfo", {
     defaultValue: false,
   },
   mediaUrl: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(1000),
     allowNull: false,
     defaultValue: "",
   },
