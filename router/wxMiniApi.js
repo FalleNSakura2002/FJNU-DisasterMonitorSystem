@@ -14,13 +14,13 @@ router.get("/allInfoDetail", async (req, res) => {
 
 // 按照ID获取事件
 router.get("/infoIdFilter", async (req, res) => {
-  const id = req.query.id;
+  const event_id = req.query.id;
 
   var idInfo = "";
   idInfo = await DisasterInfo.findOne({
     attributes: {},
     where: {
-      id: id,
+      id: event_id,
     },
   });
   res.send(idInfo);
